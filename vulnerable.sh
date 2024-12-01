@@ -1,5 +1,7 @@
 #!/bin/bash
 
-cp -R "./common/style.css" "./vulnerable/"
+cp ./common/.htaccess ./vulnerable/
+cp ./common/*.php ./vulnerable/
+cp ./common/*.css ./vulnerable/
 sqlite3 vulnerable/database.db < common/database.sql
 php -S localhost:8000 -t "./vulnerable"

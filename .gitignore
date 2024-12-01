@@ -1,4 +1,14 @@
 .idea
 *.db
-mitigated/style.css
-vulnerable/style.css
+
+mitigated/.htaccess
+mitigated/login.php
+mitigated/logout.php
+mitigated/register.php
+mitigated/*.css
+
+vulnerable/.htaccess
+vulnerable/login.php
+vulnerable/logout.php
+vulnerable/register.php
+vulnerable/*.css

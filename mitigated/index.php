@@ -11,13 +11,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Segurança de Redes 2024 &ndash; Site Vulnerável</title>
+        <title>Segurança de Redes 2024 &ndash; Site Mitigado</title>
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body class="mitigated">
         <header>
-            <h1><a href="index.php">Segurança de Redes 2024 &ndash; Site Vulnerável</a></h1>
+            <h1><a href="index.php">Segurança de Redes 2024 &ndash; Site Mitigado</a></h1>
         </header>
         <main>
             <section>
