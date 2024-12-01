@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
 
-    <body>
+    <body class="vulnerable">
         <header>
             <h1><a href="index.php">Segurança de Redes 2024 &ndash; Site Vulnerável</a></h1>
         </header>

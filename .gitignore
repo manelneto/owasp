@@ -1,2 +1,4 @@
 .idea
 *.db
+mitigated/style.css
+vulnerable/style.css
