@@ -4,6 +4,6 @@ Este projeto foi desenvolvido no âmbito da Unidade Curricular **Segurança de R
 ```
 git clone git@github.com:manelneto/owasp.git
 cd owasp
-sqlite3 database.db < database.sql
-php -S localhost:8000
+./vulnerable.sh
+./mitigated.sh
 ```

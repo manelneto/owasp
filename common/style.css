@@ -11,6 +11,14 @@ body.vulnerable button, body.vulnerable section {
     border: solid lightcoral 4px;
 }
 
+body.mitigated button, body.mitigated header {
+    background-color: green;
+}
+
+body.mitigated button, body.mitigated section {
+    border: solid lightgreen 4px;
+}
+
 header {
     padding: 1rem;
 }
