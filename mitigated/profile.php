@@ -3,10 +3,21 @@
 
     session_start();
 
+    if (!isset($_SESSION['id'])) {
+        header("Location: index.php");
+        die();
+    }
+
     $db = new PDO('sqlite:' . __DIR__ . '/database.db');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
     $id = $_GET['id'];
+
+    if ($id != $_SESSION['id']) {
+        header("Location: profile.php?id=" . $_SESSION['id']);
+        die();
+    }
+
     $user = User::getUser($db, $id);
     $username = $user->getUsername();
 ?>
