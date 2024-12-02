@@ -5,9 +5,3 @@ CREATE TABLE users (
     username VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL
 );
-
-CREATE TABLE login_attempts (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    username TEXT NOT NULL,
-    attempt_time DATETIME DEFAULT CURRENT_TIMESTAMP
-);
