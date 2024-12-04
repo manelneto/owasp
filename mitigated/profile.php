@@ -22,7 +22,6 @@
     }
 
     $user = User::getUser($db, $id);
-    $username = $user->getUsername();
 
-    profile(false, $username);
+    profile(false, $user);
 ?>

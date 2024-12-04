@@ -6,11 +6,21 @@
     session_set_cookie_params(0, '/', 'localhost', true, true);
     session_start();
 
+    if (!isset($_SESSION['id'])) {
+        header("Location: index.php");
+        die();
+    }
+
     $db = new PDO('sqlite:' . __DIR__ . '/database.db');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    $id = (int) $_GET['id'];
+    $id = $_SESSION['id'];
     $user = User::getUser($db, $id);
 
-    profile(true, $user);
+    if (!$user->isAdmin()) {
+        header("Location: profile.php?id=" . $user->getId());
+        die();
+    }
+
+    admin(false);
 ?>

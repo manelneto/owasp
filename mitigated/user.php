@@ -4,10 +4,12 @@
     class User {
         public int $id;
         public string $username;
+        public bool $admin;
 
-        public function __construct(int $id, string $username) {
+        public function __construct(int $id, string $username, bool $admin) {
             $this->id = $id;
             $this->username = $username;
+            $this->admin = $admin;
         }
 
         public function __toString() : string {
@@ -22,9 +24,13 @@
             return $this->username;
         }
 
+        public function isAdmin() : bool {
+            return $this->admin;
+        }
+
         public static function getUser(PDO $db, int $id) : ?User {
             $stmt = $db->prepare('
-                SELECT id, username
+                SELECT id, username, admin
                 FROM users
                 WHERE id = ?
             ');
@@ -34,12 +40,12 @@
 
             if (!$user) return null;
 
-            return new User((int) $user['id'], $user['username']);
+            return new User((int) $user['id'], $user['username'], (bool) $user['admin']);
         }
 
         public static function login(PDO $db, string $username, string $password) : ?User {
             $stmt = $db->prepare('
-                SELECT id, username, password
+                SELECT id, username, password, admin
                 FROM users
                 WHERE lower(username) = ?
             ');
@@ -48,7 +54,7 @@
             $user = $stmt->fetch();
         
             if ($user && password_verify($password, $user['password']))
-                return new User((int) $user['id'], $user['username']);
+                return new User((int) $user['id'], $user['username'], (bool) $user['admin']);
         
             return null;
         }

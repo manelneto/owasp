@@ -85,6 +85,10 @@ button {
     width: 50%;
 }
 
+form#admin {
+    margin-bottom: 2rem;
+}
+
 button:hover {
     color: white;
 }
