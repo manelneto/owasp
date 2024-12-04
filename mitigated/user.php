@@ -10,19 +10,19 @@
             $this->username = $username;
         }
 
-        public function __toString(): string {
+        public function __toString() : string {
             return $this->username;
         }
 
-        public function getId(): int {
+        public function getId() : int {
             return $this->id;
         }
 
-        public function getUsername(): string {
+        public function getUsername() : string {
             return $this->username;
         }
 
-        public static function getUser(PDO $db, int $id): ?User {
+        public static function getUser(PDO $db, int $id) : ?User {
             $stmt = $db->prepare('
                 SELECT id, username
                 FROM users

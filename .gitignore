@@ -5,10 +5,12 @@ mitigated/.htaccess
 mitigated/login.php
 mitigated/logout.php
 mitigated/register.php
+mitigated/templates.php
 mitigated/*.css
 
 vulnerable/.htaccess
 vulnerable/login.php
 vulnerable/logout.php
 vulnerable/register.php
+vulnerable/templates.php
 vulnerable/*.css

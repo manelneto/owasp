@@ -32,6 +32,11 @@ a, a:visited {
     text-decoration: none;
 }
 
+div p {
+    padding: 1rem;
+    text-align: center;
+}
+
 main {
     display: flex;
     flex-direction: row;

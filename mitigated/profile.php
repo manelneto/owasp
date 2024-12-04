@@ -1,6 +1,9 @@
 <?php
+    declare(strict_types = 1);
     require_once(__DIR__ . '/user.php');
+    require_once(__DIR__ . '/templates.php');
 
+    session_set_cookie_params(0, '/', 'localhost', true, true);
     session_start();
 
     if (!isset($_SESSION['id'])) {
@@ -11,38 +14,15 @@
     $db = new PDO('sqlite:' . __DIR__ . '/database.db');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    $id = $_GET['id'];
+    $id = (int) $_GET['id'];
 
-    if ($id != $_SESSION['id']) {
+    if ($id !== $_SESSION['id']) {
         header("Location: profile.php?id=" . $_SESSION['id']);
         die();
     }
 
     $user = User::getUser($db, $id);
     $username = $user->getUsername();
+
+    profile(false, $username);
 ?>
-
-<!DOCTYPE html>
-<html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Segurança de Redes 2024 &ndash; Site Mitigado</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-
-    <body class="mitigated">
-        <header>
-            <h1><a href="index.php">Segurança de Redes 2024 &ndash; Site Mitigado</a></h1>
-        </header>
-        <main>
-            <section>
-                <h2>Página Pessoal</h2>
-                <h3><?=$username?></h3>
-                <form action="logout.php" method="post">
-                    <button type="submit">Terminar Sessão</button>
-                </form>
-            </section>
-        </main>
-    </body>
-</html>
