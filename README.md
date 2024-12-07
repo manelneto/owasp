@@ -18,10 +18,10 @@ chmod 777 start.sh
 
 O *script* `start.sh` inicializa os ficheiros necessários e lança dois *containers* com os servidores.
 
-| Servidor       | Porto | URL                   |
-|----------------| ----- |-----------------------|
-| **Vulnerável** | 8000 | http://localhost:8000 |
-| **Mitigado**   | 8001 | https://localhost:8001 |
+| Servidor       | Porto | URL                   | Administrador | Palavra-Passe |
+|----------------| ----- |-----------------------| ------------- | ------------- |
+| **Vulnerável** | 8000 | http://localhost:8000 | vulnerable | vulnerable |
+| **Mitigado**   | 8001 | https://localhost:8001 | mitigated | mitigated |
 
 O *script* `end.sh` para os *containers*, elimina-os e limpa os ficheiros criados durante a execução.
 
