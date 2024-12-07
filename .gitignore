@@ -1,14 +1,14 @@
 .idea
 *.db
 
-mitigated/login.php
-mitigated/logout.php
-mitigated/register.php
-mitigated/templates.php
-mitigated/*.css
+code/mitigated/login.php
+code/mitigated/logout.php
+code/mitigated/register.php
+code/mitigated/templates.php
+code/mitigated/*.css
 
-vulnerable/login.php
-vulnerable/logout.php
-vulnerable/register.php
-vulnerable/templates.php
-vulnerable/*.css
+code/vulnerable/login.php
+code/vulnerable/logout.php
+code/vulnerable/register.php
+code/vulnerable/templates.php
+code/vulnerable/*.css
