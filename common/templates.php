@@ -5,7 +5,7 @@
         $title = $vulnerable ? 'Vulnerável' : 'Mitigado';
         $class = $vulnerable ? 'vulnerable' : 'mitigated'; ?>
         <!DOCTYPE html>
-        <html lang="en-US">
+        <html lang="pt">
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,10 +22,10 @@
                         <p><strong><?=$_SESSION['message']?></strong></p>
                     </div>
                 <?php }
-                unset($_SESSION['message']);
-    } ?>
+        unset($_SESSION['message']);
+    }
 
-    <?php function admin($title) {
+    function admin($title) {
         common($title); ?>
                 <main>
                     <section>
@@ -38,9 +38,9 @@
                 </main>
             </body>
         </html>
-    <?php } ?>
+    <?php }
 
-    <?php function index($title) {
+    function index($title) {
         common($title); ?>
                 <main>
                     <section>
@@ -66,9 +66,9 @@
                 </main>
             </body>
         </html>
-    <?php } ?>
+    <?php }
 
-    <?php function profile($title, $user) {
+    function profile($title, $user) {
         common($title); ?>
                 <main>
                     <section>

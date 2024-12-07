@@ -1,0 +1,11 @@
+services:
+  vulnerable:
+    build: './vulnerable'
+    container_name: 'vulnerable'
+    ports:
+      - '8000:80'
+  mitigated:
+    build: './mitigated'
+    container_name: 'mitigated'
+    ports:
+      - '8001:443'
